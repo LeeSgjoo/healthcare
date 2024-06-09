@@ -1,3 +1,0 @@
-/*
-Makeing program Start
- */
