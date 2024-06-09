@@ -29,9 +29,9 @@ public class Prompt {
                 pcd.deletePlan();
             }
             else if(cmd == 5){ // Start exercise
-                pcd.printPlan();
+                pcd.displayPlan();
                 WorkoutMENU wm = new WorkoutMENU();
-                displayMenu()
+                displayMenu();
             }
             else if(cmd == 6){ // Display menu
                 displayMenu();
