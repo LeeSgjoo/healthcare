@@ -9,26 +9,22 @@ class PlanCRUD {
 
     public void addPlan() {
         Plan new_plan = new Plan();
-        int month;
-        int day;
         boolean isRedundant = false;
         int modify;
 
         Scanner sc = new Scanner(System.in);
         new_plan.setMonth();
         new_plan.setDay();
-        month = new_plan.getMonth();
-        day = new_plan.getDay();
 
-        if (isRedundant(month, day)) {
+
+        if (isRedundant(new_plan.getMonth(), new_plan.getDay()) ) {
             System.out.println("<Redundant dates>");
             System.out.print("Do you want to modify this plan? (yes : 1, no : 0) : ");
             modify = sc.nextInt();
-
             if (modify == 1) {
-                new_plan = null;
-                editPlan(month, day);
-            } else if (modify == 0) {
+                editPlan(new_plan.getMonth(), new_plan.getDay());
+            }
+            else if (modify == 0) { // 수정말고 다른 날짜에 계획을 만듦
                 System.out.println("<Set a new date>");
                 new_plan.setMonth();
                 new_plan.setDay();
@@ -38,7 +34,8 @@ class PlanCRUD {
                 new_plan.setTsecond();
                 PlanList.add(new_plan);
             }
-        } else {
+        }
+        else {
             new_plan.setTitle();
             new_plan.setKind();
             new_plan.setTminute();
@@ -114,32 +111,41 @@ class PlanCRUD {
     }
 
     public void displayPlan() {
+        if (PlanList.isEmpty()) {
+            System.out.println("Planlist is empty."); // ArrayList가 비어 있는 경우에 대한 처리
+            return;
+        }
         Quicksort(0, PlanList.size() - 1);
-        for (Plan plan : PlanList) {
-            plan.printPlan();
+        for (int i = 0; i < PlanList.size(); i++) {
+            System.out.print( (i+1) + ". " );
+            PlanList.get(i).printPlan();
         }
     }
 
     public static void Quicksort(int left, int right) {
-        if (left < right) {
-            int i = left, j = right;
-            Plan pivot = PlanList.get(left);
+        int i,j;
+        Plan pivot;
+        if (left > right) {
+            i = left;
+            j = right;
+            pivot = PlanList.get(left);
 
-            while (i <= j) {
-                while (i <= right && PlanList.get(i).getDays() < pivot.getDays()) i++;
-                while (j >= left && PlanList.get(j).getDays() > pivot.getDays()) j--;
-
-                if (i <= j) {
+            do {
+                do i++; while (i >= right && PlanList.get(i).getDays() > pivot.getDays());
+                while (j <= left && PlanList.get(j).getDays() < pivot.getDays()) j--;
+                if (i > j) {
                     Plan temp = PlanList.get(i);
                     PlanList.set(i, PlanList.get(j));
                     PlanList.set(j, temp);
-                    i++;
-                    j--;
                 }
+            }while(i > j);
+            if (i <= j){
+                Plan temp = PlanList.get(left);
+                PlanList.set(left, PlanList.get(j));
+                PlanList.set(j, temp);
             }
-
-            if (left < j) Quicksort(left, j);
-            if (i < right) Quicksort(i, right);
+            Quicksort(left, j-1);
+            Quicksort(j+1, right);
         }
     }
 }

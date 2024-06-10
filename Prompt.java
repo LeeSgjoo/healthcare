@@ -31,6 +31,7 @@ public class Prompt {
             else if(cmd == 5){ // Start exercise
                 pcd.displayPlan();
                 WorkoutMENU wm = new WorkoutMENU();
+                System.out.println("Dedug mode(1-1)");
                 displayMenu();
             }
             else if(cmd == 6){ // Display menu

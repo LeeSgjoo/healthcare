@@ -11,11 +11,11 @@ class Plan {
     private int Tminute;
     private int Tsecond;
     private int Ttotal; // Timer total seconds
-    private boolean iscompleted;
+    private boolean iscompleted = false;
     private static final int[] MAX_DAYS = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    public static Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
 
-    public Plan() {}
+    public Plan() {};
 
     public Plan(String title, String kind, int month, int day, int Tminute, int Tsecond) {
         this.title = title;
@@ -30,13 +30,13 @@ class Plan {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public void setTitle() {
         System.out.print("Enter title: ");
+        sc.nextLine();
         this.title = sc.nextLine();
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String[] getKind() {
