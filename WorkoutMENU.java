@@ -26,10 +26,8 @@ class WorkoutMENU {
         else {
             displayExerciseMenu();
 
-            System.out.println("Dedug mode(1)");
             while (true) {
                 cmd = sc.nextInt();
-                System.out.println("Dedug mode(2)");
                 if (cmd == 1) { // End current workout
                     currentNum++;
                     if (currentNum == PlanCRUD.PlanList.get(wcd.getIndex()).getKind().length) {
@@ -55,6 +53,7 @@ class WorkoutMENU {
                         System.out.println("Now is not the time to rest!");
                         wcd.noTakingRest();
                         wcd.plusCurrentNum();
+                        wcd.displayList();
                     }
                 }
                 else if (cmd == 3) { // Skip the break time
@@ -64,6 +63,7 @@ class WorkoutMENU {
                     else {
                         wcd.noTakingRest();
                         timer.cancel();
+                        wcd.displayList();
                     }
                 } else if (cmd == 4) { // Workout completed
                     System.out.println("Good Job!");
@@ -100,6 +100,8 @@ class WorkoutMENU {
             public void run() {
                 System.out.println("Break time ends!");
                 wcd.noTakingRest();
+                wcd.displayList();
+
             }
         };
 
