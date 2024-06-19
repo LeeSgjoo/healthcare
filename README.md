@@ -1,23 +1,27 @@
-# <healthcare-program>
-# - This program help you to make plan and do your workout.
-
-
-#  < explanation >
-# 1. when you start program, you can see th menu
+# Project title: healthcare-program
+# Project membersr(1): Lee seung joo(22300546)
+# Project description - This program help you to make plan and do your workout.
+# .
+# .
+# .
+#  < User's guide >
+# 1. when you start program, you can see th menu.
 #    it has 6 choices.
-
-# If you input number 1, you can check your workout plan.
+#
+# If you input number 1, you can check your workout plan that sorted by 'Quicksort algorithm'.
 # If there is no plan, program informs that fact like "Planlist is empty.".
 # If you input number 2, you can add your workout plan. 
 # the plan includes date, title, number of exercises, kind of exercises and rest time
+# (If the date has already been added, it will notify you that it has been duplicated.)
 
 <img src = "https://github.com/LeeSgjoo/healthcare/blob/main/img/img(1).png?raw=true">
 
-
-
+# 
+# 
 # The (N) mark is "NO" that mean you did not complete this plan. 
 # If you complete it, than it changes from (N) to (Y)
 # If you input number 3, you can modify your workout plan.
+# (If the date has already been added, it will notify you that it has been duplicated.)
 # To modify plan, you should input the date and then input the information of plan.
 # If you input number 4, you can delete your workout plan.
 # To delete plan, you should input the date of plan.
@@ -49,3 +53,8 @@
 # When you finish your workout plan, input number 4, then the exercising is ended and moves on main menu.
 # you can quit the program by inputting number 7.
 <img src="https://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-4).png?raw=true">
+
+#.
+#.
+#.
+# <UML diagram of classes and interfaces>
