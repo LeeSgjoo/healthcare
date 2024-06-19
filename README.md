@@ -24,7 +24,7 @@
 
 # you can see main menu again, if you input number 6.
 
-<img src = "img(2)">
+<img src = "https://github.com/LeeSgjoo/healthcare/blob/main/img/img(2).png?raw=true">
 
 
 
@@ -35,17 +35,17 @@
 # when you work out number 1 exercise, there is (Performing) message next to the name of exercise.
 # if you finish current exercise, you should input number 1, then it moves to next workout and start rest time.
 # (Performing) changes  to (Taking Rest). program informs 'Remaining time'.
-<img src = "img(3-1)">
+<img src = "https://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-1).png?raw=truehttps://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-1).png?raw=true">
 
 # During take a break, you can check your left rest time by inputting number 2.
 # If you input number 3, you can skip rest time. (Taking Rest) changes  to (Performing)
 # And then rest time is initialized.
-<img src = "img(3-2)">
+<img src = "https://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-2).png?raw=true">
 
 # When the rest time that you did input runs out, then your current exercise is automatically started.
 # When the rest time is already finished, if you input number 2, then program says "Now is not the time to rest!".
-<img src="img(3-3)">
+<img src="https://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-3).png?raw=true">
 
 # When you finish your workout plan, input number 4, then the exercising is ended and moves on main menu.
 # you can quit the program by inputting number 7.
-<img src="img(3-4)">
+<img src="https://github.com/LeeSgjoo/healthcare/blob/main/img/img(3-4).png?raw=true">
